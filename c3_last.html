@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const TAX_RATE = 1.1;
+    let productPrice = 1000;
+
+    let price = TAX_RATE * productPrice;
+    console.log(`商品の金額は${productPrice}円ですので、税込金額は${price}円です。`);
+
+    // console.log((12*2) % 5);
+    // console.log(BigInt((12*2) % 5));
+    // console.log("string" - 1);
+
+    const counter = {
+      num: 1
+    };
+
+    counter.num += 1;
+
+    window.alert(counter['num']);
+
+    console.log(typeof null);
+    console.log(100 + true);
+    console.log(1 + Number("hello"));
+    console.log(1 + Boolean("hello"));
+
+
+  </script>
+</body>
+</html>

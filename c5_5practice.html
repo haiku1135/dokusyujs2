@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    try{
+      let greeting = 1;
+
+      if(typeof greeting !== "string"){
+        throw new Error("不正なデータ型です");
+      }
+      console.log(`${greeting},いい天気ですね。`);
+
+    }catch(e){
+      console.log(e);
+    }
+  </script>
+</body>
+</html>

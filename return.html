@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function printSum(a, b){
+      if(typeof a !== 'number' || typeof b !== 'number'){
+        console.log("end");
+        return;
+      }
+
+      console.log(a + b);
+    }
+
+    let result = printSum("10", "20");
+    console.log(result);
+
+    printSum(10, 20);
+  </script>
+</body>
+</html>

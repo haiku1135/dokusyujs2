@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class User {
+      constructor(username){
+        this.username = username;
+        this.deleted = 0;
+      }
+
+      login() {
+        if(this.deleted === 0){
+          console.log('success');
+        }else {
+          console.log('failure');
+        }
+      }
+    }
+
+    class AdminUser extends User {
+      constructor(username) {
+        super(username);
+      }
+      deleteUser(obj) {
+        if(!(obj instanceof User)){
+          throw new Error("not Userobject");
+        }
+        obj.deleted = 1;
+        console.log(`${obj.username} is deleted`);
+      }
+    }
+
+    const taro = new User('taro');
+    taro.login();
+
+    const hanako = new AdminUser('hanako');
+    // console.log(hanako);
+    hanako.deleteUser(taro);
+    console.log(taro);
+  </script>
+</body>
+</html>

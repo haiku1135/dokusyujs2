@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // class TestCls {
+    //   method(arg) {
+    //     console.log(`hikisu:[${arg}] method`);
+    //   }
+    // }
+
+    // const test = new TestCls;
+    // test.method("test");
+
+    class User {
+      constructor( username, password) {
+        this.username = username;
+        this.password = password;
+      }
+
+      login() {
+        console.log(this.username, this.password);
+      }
+
+      changePassword(pwd) {
+        this.password = pwd;
+        console.log(this.password);
+      }
+    }
+
+    const taro = new User('dokusyu', 'taro-pwd');
+
+    taro.login();
+
+    taro.changePassword('new-pwd');
+
+    taro.login();
+  </script>
+</body>
+</html>

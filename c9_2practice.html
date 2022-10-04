@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class StdClass {
+      constructor(arg) {
+        this.arg = arg;
+      }
+
+      static printFn = console.log;
+      static print(arg) {//print()で呼ばれた
+        StdClass.printFn(arg);//静的メソッドで静的メソッドを呼び出すにはクラス名をつけなければいけない
+      }
+
+      print() {//std.print()で呼ばれた
+        this.constructor.print(this.arg);//静的メソッドを呼び出す
+      }
+    }
+
+    const std = new StdClass('hello');//インスタンスを作成
+    std.print();//methodを呼び出す
+
+    
+  </script>
+</body>
+</html>

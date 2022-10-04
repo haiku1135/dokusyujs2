@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Human {
+      static TYPE = 'normal';
+
+      static staticMove() {
+        console.log(Human.TYPE + "は歩いて移動します。");
+      }
+
+      constructor( name ) {
+        this.name = name;
+      }
+
+      move() {
+        console.log(this.name + "は歩いて移動します。");
+      }
+    }
+
+    const taro = new Human('taro');
+
+    Human.staticMove();
+
+    console.log(Human.TYPE);
+
+    taro.move();
+
+    class TestCls {
+      static STATIC_PROP = 'static prop';
+
+      static staticMethod(){return 'static method'};
+
+      method() {
+        console.log(this.constructor.STATIC_PROP);
+        console.log(this.constructor.staticMethod());
+      }
+    }
+
+    const test = new TestCls;
+    test.method();
+  </script>
+</body>
+</html>

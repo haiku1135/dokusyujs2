@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Parent{}
+    class Child extends Parent{}
+
+    const obj = new Child;
+    console.log(obj instanceof Child);
+    console.log(obj instanceof Parent);
+
+    class Person {
+      constructor(){
+        this.name = 'dokusyu';
+      }
+    }
+
+    const taro = new Person;
+    console.log(taro);
+
+    console.log(taro.hasOwnProperty('name'));
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let now = new Date();
+    console.log(now);
+
+    let date = new Date(24 * 60 * 60 * 1e3);
+    console.log(date);
+
+    const localTime = new Date('2021-05-04T02:35:00');
+    console.log(localTime.toISOString());
+
+    const utcTime = new Date('2021-05-04T02:35:00Z');
+    console.log(utcTime.toISOString());
+
+    const hawaiiTime = new Date('20210-05-04T02:35:00-10:00');
+    console.log(hawaiiTime.toISOString);
+
+    date = new Date(2021, 0, 4, 2, 35, 0);
+    console.log(date);
+
+  </script>
+</body>
+</html>

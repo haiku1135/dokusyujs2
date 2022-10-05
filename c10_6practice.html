@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const fruits = {banana: "good", apple: "normal", orange: "soso",other: {grape: "good"}};
+
+    console.log(JSON.stringify(fruits, ["banana", "apple"]));
+
+    function replacer(prop, value) {
+      if(typeof value === 'string' && value !== "good"){
+        return;
+      }else {
+        return value;
+      }
+    }
+
+    console.log(JSON.stringify(fruits, replacer));
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const arry = [1, 2, 3, 4, 5];
+    function multiply5(value){
+      return value * 5;
+    }
+
+    const newArry = arry.map(multiply5);
+    // const newArry = arry.map(value => value * 5);
+    console.log(newArry);
+
+    function gt3(value) {
+      return value > 3;
+    }
+
+    const newArry2 = arry.filter(gt3);
+    console.log(newArry2);
+
+    const result1 = arry.every(value => value > 0);
+    console.log(result1);
+
+    const result2 = arry.every(value => value> 3);
+    console.log(result2);
+
+    const result3 = arry.some(value => value>4);
+    console.log(result3);
+
+    const result4 = arry.find(value => value > 2);
+    console.log(result4);
+
+    const strArry = ['b', 'c', 'a'];
+    strArry.sort();
+    console.log(strArry);
+
+    function compare(val1, val2) {
+      if(val1 < val2) {
+        return -1;
+      }
+      if(val1 > val2) {
+        return 1;
+      }
+
+      return 0;
+    }
+
+    const compArry = [10, 2, 7, 3, 9];
+    // arry.sort(compare);
+    // console.log(compArry);
+
+    function ascending(a, b) {
+      return a-b;
+    }
+
+    console.log(arry.sort(ascending));
+
+    function descending(a, b) {
+      return b-a;
+    }
+    console.log(arry.sort(descending));
+  </script>
+</body>
+</html>

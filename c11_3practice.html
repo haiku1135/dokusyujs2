@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const chuka = new Set(["八宝菜", '餃子', '回鍋肉', '青椒肉絲', '餃子']);
+
+    chuka.add('杏仁豆腐');
+    chuka.add('餃子');
+    console.log(chuka);
+
+    chuka.delete('回鍋肉');
+    console.log(chuka);
+
+    console.log(chuka.has('八宝菜'));
+
+    const chukaArry = Array.from(chuka);
+    console.log(chukaArry.join(' '));
+  </script>
+</body>
+</html>

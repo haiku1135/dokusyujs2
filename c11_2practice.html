@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //{タイトル,優先順位,完了か否か}
+    //優先順位(priority)は 1:低, 2:中, 3:高
+    const todos = [
+      {title: '晩ごはん', priority:2, completed: false},
+      {title: 'ゴミ出し', priority:1, completed: true},
+      {title: '食材の買い出し', priority:3, completed: false},
+      {title: '洗濯', priority:2, completed: true},
+      {title: '録画の視聴', priority:1, completed: false},
+    ];
+
+    todos.forEach(({title, completed}) => {
+      if(completed){
+        console.log(`${title}は完了！`);
+      }else{
+        console.log(`${title}をやらないと！`);
+      }
+    });
+
+    const notCompleted = todos.filter(({completed}) => {
+      return completed !== true;
+    });
+
+    notCompleted.sort((todoA, todoB) => {
+      return todoB.priority - todoA.priority;
+    });
+
+    function printTodo(todos) {
+      todos.forEach(({ title, completed }) => {
+        if (completed) {
+            console.log(`${title}は完了！`);
+        } else {
+            console.log(`${title}をやらないと！`);
+        }
+      })
+    }
+    printTodo(notCompleted);
+  </script>
+</body>
+</html>

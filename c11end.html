@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const orders = [
+      ['八宝菜', 1, 600],
+      ['餃子', 4, 200],
+      ['回鍋肉', 1, 1,500],
+      ['青椒肉絲', 2, 2,700],
+    ];
+
+    const orderFilterd = orders.filter(oreder => order[0] !== '回鍋肉');
+
+    const lt1000 = orderFilterd.every(([,,price]) => price < 1000);
+
+    orderFilterd.sort(([,,priceA], [,, priceB]) => priceB - priceA);
+
+    orderFilterd.forEach(([itemName, amount, price]) => {
+      console.log(itemName, price, amount);
+    });
+
+    const reducer = (accu, [, amount, price] )=> accu + amount * price;
+
+    class Person{
+      constructor(fullname, age, gender) {
+        this.fullname = fullname;
+        this.age = age;
+        this.gender = gender;
+      }
+    }
+
+    const taro = new Person('taro', 18, 'male');
+    const jiro = new Person('jiro', 15, 'male');
+    const saburo = new Person('saburo', 10, 'male');
+    const hanako = new Person('hanako', 23, 'female');
+    const hanayo = new Person('hanayo', 18, 'female');
+
+    const friends = new Map;
+
+    friends.set(taro, new Set([jiro, hanayo]));
+
+    friends.set(hanako, new Set([hanayo, taro, saburo]));
+
+    const taroFriendSet = friends.get(taro);
+    taroFriendSet.add(hanako);
+
+    const taroFriendArray = Array.from(taroFriendSet);
+    taroFriendArray.sort((friendA, friendB) => friendB.age - friendA.age);
+    for(const person of taroFriendArray) {
+      console.log(person.fullname);
+    }
+  </script>
+</body>
+</html>

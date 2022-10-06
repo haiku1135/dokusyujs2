@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const array2D = [
+      ['taro', '25sai', 'male'],
+      {name: 'hanako', age: 23, gender: 'female'}
+    ];
+
+    console.log(array2D[0]);
+    console.log(array2D[0][0]);
+
+    console.log(array2D[0][2]);
+
+    console.log(array2D[1].name);
+
+    console.log(array2D[1]['age']);
+
+    const fruits = ['banana', 'apple', 'orange'];
+    // fruits.push('apple');
+
+    // console.log(fruits);
+
+    // fruits.unshift('lemon');
+    // console.log(fruits);
+
+    // let returnVal = fruits.shift();
+    // console.log(fruits);
+
+    // console.log(returnVal);
+
+    // returnVal = fruits.pop();
+
+    // console.log(returnVal);
+
+    let deletedVal = fruits.splice(1, 2);
+    console.log(fruits);
+    console.log(deletedVal);
+
+    const fruits2 = ['banana', 'orange', 'grape'];
+    // fruits.splice(1, 1, 'apple', 'lemon');
+
+    // console.log(fruits);
+
+
+    // const newFruits = fruits2.concat(['melon', 'mango']);
+    // console.log(newFruits);
+
+    const newFruits = fruits2.concat();
+    
+  </script>
+</body>
+</html>

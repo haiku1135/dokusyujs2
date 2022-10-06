@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const emptyMap = new Map();
+    console.log(emptyMap);
+
+    const convertedMap = new Map([
+      ['key1', 'value1'],
+      ['key2', 'value2']
+    ]);
+
+    console.log(convertedMap);
+
+    const fruits = new Map();
+    fruits.set(1, 'apple');
+    const emptyObj = {};
+    fruits.set(emptyObj, 'orange');
+    fruits.set(true, 'grape');
+    console.log(fruits);
+    console.log(fruits.get(emptyObj));
+    console.log(fruits.get({})); //undefined
+
+    fruits.delete(false);
+    fruits.clear();
+  </script>
+</body>
+</html>

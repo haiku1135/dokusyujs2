@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const convertedSet = new Set([1, 2, 3]);
+    console.log(convertedSet);
+
+    const fruits = new Set();
+    fruits.add('apple');
+    fruits.add('orange');
+    fruits.add('orange');
+    console.log(fruits);
+
+    fruits.delete('orange');
+
+    fruits.clear();
+    fruits.add('apple');
+    fruits.add('orange');
+
+    console.log(fruits.has('orange'));
+    
+  </script>
+</body>
+</html>

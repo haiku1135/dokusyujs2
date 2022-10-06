@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let {banana, orange, apple} = {apple: 'ringo', banana: 'banana', orange: 'orange'};
+    console.log(banana);
+
+    let {banana: b, apple: a} = {apple: 'apple', banana: 'banana'};
+    console.log(b, a);
+
+    let {banana: b2 = 'good banana'} = {apple: 'apple'};
+    console.log(b2);
+
+    let {banana: b3, ...fruits} = {fruits: {apple: 'apple', banana: 'banana', orange: 'orange'}};
+    console.log(fruits);
+
+    let {fruits: {apple: a3}} = {fruits: {apple:"apple", banana: 'banana'}};
+    console.log(a3);
+
+    let prop = 'apple';
+    let {[prop]: a4} = {apple: 'apple', banana: 'banana', orange: 'orange'};
+    console.log(a4);
+  </script>
+</body>
+</html>

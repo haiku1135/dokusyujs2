@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arry = [1, 2, 3];
+
+    let [x, y, z] = arry;
+    console.log(x, y, z);
+
+    let[x1,, z1] = arry;
+    console.log(x1, z1);
+
+    let x2;
+    [x2] = arry;
+    console.log(x2);
+
+    let [,,, a3 = 4] = arry;
+    console.log(a3);
+
+    let [x4, ...rest] = arry;
+    console.log(x4, rest);
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const arry = [1, 2, 3, 4, 5];
+    arry.forEach( function(value, index, arry){
+      console.log(value, index, arry);
+    });
+
+    for(let index = 0; index< arry.length; index ++){
+      console.log(value, index, arry);
+    }
+    arry.forEach((value, index, arry) => console.log(value, index, arry));
+
+    function multiply5(value) {
+      console.log(value * 5);
+    }
+    arry.forEach(multiply5);
+  </script>
+</body>
+</html>

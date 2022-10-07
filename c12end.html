@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // function genStep(min, max, step){
+    //   let value = min - step;
+
+    //   return {
+    //     next() {
+    //       value += step;
+    //       if(value <= max) {
+    //         return {
+    //           done: false,
+    //           value: value
+    //         }
+    //       }else {
+    //         return {
+    //           done: true
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+    function* genStep(min, max, step){
+      for( let value = min; value <= max; value += step){
+        yield value;
+      }
+    }
+
+
+    const it  = genStep(4, 10, 2);
+    let a = it.next();
+
+    while(!a.done){
+      console.log(a.value);
+      a = it.next();
+    }
+
+    // Array.prototype[Symbol.iterator] = function() {
+    //   let index = 0;
+
+    //   let arry = this;
+
+    //   return {
+    //     next(){
+    //       if(index< arry.length){
+    //         return {
+    //           done: false,
+    //           value: [index, arry[index++]]
+    //         };
+    //       }else{
+    //         return {
+    //           done: true,
+    //         };
+    //       }
+    //     },
+    //   };
+    // };
+    Array.prototype[Symbol.iterator] = function*(){
+      let arry = this;
+      for(let index = 0; index< arry.length; index++){
+        yield [index, arry[index]];
+      }
+    }
+    for(let item of ["hello", 'World']){
+      console.log(item);
+    }
+
+    class Shape {
+      constructor(options) {
+        const defaults = {
+          type: 'sikaku',
+          textColor: 'black',
+          borderColor: 'none',
+          bgColor: 'white'
+        };
+        this.options = {...defaults, ...options};
+      }
+
+      draw(){
+        const {type, textColor, borderColor, bgColor} = this.options;
+        console.log(type, textColor, borderColor, bgColor);
+      }
+    }
+
+    const triangle = new Shape({type: 'triangle'});
+    triangle.draw();
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function alphabetIterator( start = 'a', end = 'z') {
+      if(start > end) {
+        throw '開始文字は終了文字より前のアルファベットを選んでください';
+      }
+
+      const ALPHABET_ARRAY = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+      const startIndex = ALPHABET_ARRAY.indexOf(start);
+      const endIndex = ALPHABET_ARRAY.indexOf(end);
+
+      const targetAlphabet = ALPHABET_ARRAY.slice(startIndex, endIndex + 1);
+
+      return {
+        next() {
+          const alphabet = targetAlphabet.shift();
+
+          return {
+            value: alphabet,
+            done: alphabet ? false : true
+          }
+
+        }
+      }
+    }
+
+    const it = alphabetIterator('c', 'e');
+
+    let nextValue = it.next();
+    while(!nextValue.done) {
+      console.log(nextValue);
+
+      nextValue = it.next();
+    }
+  </script>
+</body>
+</html>

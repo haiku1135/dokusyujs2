@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function wait(ms) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log(`${ms}msの処理が完了しました。`);
+          resolve(ms);
+        }, ms);
+      });
+    }
+
+    const wait400 = wait(400);
+    const wait500 = wait(500);
+    const wait600 = wait(600);
+
+    Promise.all([wait500, wait400, wait600])
+    .then(([resolved500, resolved400, resolved600]) => {
+      console.log('すべてのPromiseが完了しました。');
+      console.log(resolved500, resolved400, resolved600);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <article id="article">
+    <h1 id="article-title">記事のタイトル</h1>
+    <div class="tag-area">
+      <span>タグ：</span><span>スポーツ</span><span>バスケ</span>
+    </div>
+    <div class="article-body">記事の本文</div>
+    <div id="recommend">
+      <h2>おすすめの記事</h2>
+      <a href="#">他の記事</a>
+    </div>
+  </article>
+
+  <script>
+    const htmlStr = `<article id="article">
+                      <h1 id = "article-title" > 記事のタイトル</h1>
+                      <div class="tag-area">
+                        <span>タグ：</span><span>スポーツ</span><span>バスケ</span>
+                      </div>
+                       <div class="article-body">記事の本文</div>
+                      <div id="recommend">
+                       <h2>おすすめの記事</h2>
+                        <a href="#">他の記事</a>
+                      </div>
+                    </article> `;
+
+    
+    function htmlStrToElement(htmlStr){
+      const dummyDiv = document.createElement('div');
+
+      dummyDiv.innerHTML = htmlStr;
+
+      return dummyDiv.firstElementChild;
+    }
+
+    const targetNewElement = htmlStrToElement(htmlStr);
+
+    document.body.prepend(targetNewElement);
+  </script>
+</body>
+</html>

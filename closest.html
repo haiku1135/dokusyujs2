@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section style="background-color: yellow;">
+    これは祖先要素です。
+    <div>
+      <span id="target"></span>
+    </div>
+  </section>
+  <section style="background-color: orange;">
+    これは祖先要素ではありません。
+  </section>
+
+  <script>
+    setTimeout(() => {
+      const target = document.querySelector('#target');
+
+      const section = target.closest('section');
+
+      section.prepend("発見 -> ");
+    }, 2000);
+  </script>
+</body>
+</html>

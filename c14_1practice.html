@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1></h1>
+  <p id="idAttr" class="classAttr">
+    <span></span>
+  </p>
+  <p class="classAttr"></p>
+  <input type="text" name="nameAttr">
+  <input type="password" name="pwdAttr">
+
+  <script>
+    const idAttr = document.querySelector('#idAttr');
+
+    const classAttr = document.querySelectorAll('.classAttr');
+
+    const p = document.querySelectorAll('p');
+
+    const text = document.querySelector('input[type="text"]');
+
+    const span = document.querySelector('span');
+    span.closest('p');
+
+    const pwd = document.querySelector('h1 ~ input[type="password"]');
+
+    const sibling = document.querySelector('#idAttr > *');
+
+    const input = document.querySelector('input[type="text"] + *');
+  </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="source">Source</div>
+  <section id="section">
+    <div class="wrap">
+      <h1 class="title">
+        <span>title</span>
+      </h1>
+      <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    function moveElement(callback){
+      return () => new Promise(resolve => {
+        setTimeout(() => {
+          callback();
+          resolve();
+        }, 2000);
+      });
+    }
+
+    const aim = document.querySelector("#source");
+
+    const answer1 = moveElement(() => {
+      const h1 = document.querySelector('.title');
+      h1.prepend(aim);
+    });
+
+    const answer2 = moveElement(() => {
+      const h1 = document.querySelector('.title');
+      h1.after(aim);
+    });
+
+    const answer3 = moveElement(() => {
+      const wrap = document.querySelector('.wrap');
+      wrap.append(aim);
+    });
+
+    const answer4 = moveElement(() => {
+      const list = document.querySelector('.list');
+      const targetLi = list.children[1];
+      targetLi.prepend(aim);
+    });
+
+    answer1()
+    .then(answer2)
+    .then(answer3)
+    .then(answer4);
+  </script>
+</body>
+</html>

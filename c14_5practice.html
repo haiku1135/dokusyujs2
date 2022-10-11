@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="target">divdivdiv</div>
+  <style>
+    #target {
+      margin: 100px;
+      width: 200px;
+      border: 10px solid red;
+    }
+  </style>
+  <script>
+    const target = document.querySelector('#target');
+
+    const targetRect = target.getBoundingClientRect();
+
+    console.log(targetRect.y);
+
+    console.log(targetRect.right);
+    console.log(targetRect.width);
+    console.log(targetRect.height);
+  </script>
+</body>
+</html>

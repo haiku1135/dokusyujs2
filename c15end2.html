@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <article>
+    <div></div>
+  </article>
+
+  <script>
+    const article = document.querySelector('article');
+    const div = document.querySelector('div');
+
+    div.addEventListener('click', event => {
+      event.stopPropagation();
+      console.log('div');
+    });
+
+    article.addEventListener('click', () => {
+      console.log('article');
+    });
+
+  </script>
+
+  <style>
+    article,
+    div {
+      padding: 30px;
+    }
+
+    article {
+      background: crimson;
+    }
+
+    div{
+      background-color: cyan;
+    }
+  </style>
+</body>
+</html>

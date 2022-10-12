@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>change color</div>
+  <button id="all-color">color bgcolor</button>
+
+  <script>
+    const targetEl = document.querySelector('div');
+    const allColorBtn = document.querySelector('#all-color');
+
+    function colorChange(event){
+      event.stopImmediatePropagation();
+
+      targetEl.style.color = '#ff0000';
+    }
+
+    function bgColorChange(event){
+      targetEl.style.backgroundColor = 'blue';
+    }
+
+    allColorBtn.addEventListener('click', colorChange);
+    allColorBtn.addEventListener('click', bgColorChange);
+  </script>
+</body>
+</html>

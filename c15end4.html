@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .completed > span {
+      text-decoration: line-through;
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div id="todo-container">
+    <input type="text" name="" id="create-input" />
+    <button id="create-btn">追加</button>
+    <ul id="todo-list">
+
+    </ul>
+  </div>
+  <template id="todo-item-tmpl">
+    <li class="todo-item">
+      <span class="todo-title"></span>
+      <input type="button" class="delete-btn" value="削除">
+      <input type="button" class="complete-btn" value='完了' >
+    </li>
+  </template>
+  
+
+  <script>
+    const todoList = document.querySelector('#todo-list');
+
+    const todoItemTmpl = document.querySelector('#todo-item-tmpl');
+
+    const todoItem = todoItemTmpl.content;
+
+    const createBtn = document.querySelector('#create-btn');
+    const createInput = document.querySelector('#create-input');
+
+    createBtn.addEventListener('click', () => {
+      createTodoItem(createInput.value);
+    });
+
+
+    function createTodoItem(value){
+      const newItem = todoItem.cloneNode(true);
+      const newTitle = newItem.querySelector('.todo-title');
+      const newDelBtn = newItem.querySelector('.delete-btn');
+      const newCompBtn = newItem.querySelector('.complete-btn');
+
+      newTitle.textContent = value;
+
+      newDelBtn.addEventListener('click', (event) => {
+        deleteTodoItem(event.target.parentElement);
+      })
+      newCompBtn.addEventListener('click', (event) => {
+        completeTodoItem(event.target.parentElement);
+      })
+
+      todoList.append(newItem);
+    }
+
+    function deleteTodoItem(item){
+      item.remove();
+    }
+    function completeTodoItem(item){
+      item.classList.toggle('completed');
+    }
+
+  </script>
+</body>
+</html>

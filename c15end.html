@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="val1" type="number" value="0"> +
+  <input id="val2" type="number" value="0"> =
+  <span id="answer">0</span>
+  <button>ランダム</button>
+
+  <script>
+    const val1 = document.querySelector('#val1');
+    const val2 = document.querySelector('#val2');
+    const answer = document.querySelector('#answer');
+    const btn = document.querySelector('button');
+
+    // #answerのタグ内にいれるカウントの初期値を定義
+    // let count = 0;
+
+    function inputHandler(){
+      answer.textContext = Number(val1.value) + Number(val2.value);
+    }
+
+    const inputEvent = new Event('input');
+
+    btn.addEventListener('click', () => {
+      val1.value = Math.floor(Math.random() * 10 + 1);
+      val2.value = Math.floor(Math.random() * 10 + 1);
+      val1.dispatchEvent(inputEvent);
+    })
+
+    val1.addEventListener('input', inputHandler);
+    val2.addEventListener('input', inputHandler);
+
+
+
+  </script>
+</body>
+</html>

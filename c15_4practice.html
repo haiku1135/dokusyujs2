@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+    <span>#container</span>
+    <div id="wrapper">
+      <span>#wrapper</span>
+      <div id="target"><span>#target</span></div>
+    </div>
+  </div>
+
+  <script>
+    const cotainer = document.querySelector('#cotainer');
+    const wrapper = document.querySelector('#wrapper');
+    const target = document.querySelector('#target');
+
+    function clickDialog(element, isCapture = false){
+      element.addEventListener('click' , () => {
+        const spanText = element.firstElementChild.textContent;
+        alert(spanText);
+      }, isCapture);
+    }
+
+    clickDialog(cotainer);
+    clickDialog(wrapper);
+    clickDialog(target);
+
+    wrapper.addEventListener('click', event => {
+      event.stopPropagation();
+    });
+  </script>
+
+  <style>
+    div{
+      margin: 10px;
+      border: 1px solid cornsilk;
+    }
+
+    body {
+      background-color: cornsilk;
+    }
+  </style>
+</body>
+</html>
